@@ -38,7 +38,7 @@ The 'model' property is the only required property, while the other properties h
 The 'model' property specifies the language model that you want to use for generating text with the OpenAI API. In this example, we have set the model to 'text-davinci-003'. According to OpenAI, 'gpt-3.5-turbo' is the most capable and cost-effective model in the GPT-3.5 family. Although it is free to use, calling the API too frequently in a short period of time is limited. Therefore, 'text-davinci-003' is used in this case. OpenAI provides a wide range of models, some of which require different endpoints. Additionally, some models, such as GPT-4, are still in limited beta and require special access. A complete list of available models and their corresponding endpoints can be found here: https://platform.openai.com/docs/models/
 
 #### prompt
-This is the starting text that the language model uses as a prompt. It's similar to writing a message to ChatGPT about any topic that you may be wondering about. To better control the output, additional text is added to the prompt to provide direction. However, the majority of the content is left up to the user.
+This is the starting text that the language model uses as a prompt. It's similar to writing a message to ChatGPT about any topic that you may be wondering about. To better control the output, additional text is added to the prompt to provide direction and then the rest of the content is left up to the user.
 
 #### max_tokens
 The maximum number of tokens that will be generated in response is determined by this parameter. Tokens can be words or just chunks of characters. For example, the string 'ChatGPT is great!' is encoded into six tokens: ['Chat', 'G', 'PT', ' is', ' great', '!']. You pay for the tokens you consume, so the more tokens used, the more expensive the API call becomes. Additionally, the response received counts towards the total number of tokens. Lets say you write a prompt that amounts to 10 tokens and the response you get from the API amounts to 20 tokens. The total number of tokens used is then 30. So you you just spent 30 tokens. When you first signup with OpenAI you get a free trial usage up to 18$. The number of tokens also affects the duration of the API call, with more tokens taking longer to process. The maximum limit of tokens in a single call varies from model to model. For instance, the gpt-3.5-turbo-0301 model has a limit of 4096 tokens, while the text-davinci-003 has a limit of 2048 tokens.
@@ -55,4 +55,22 @@ This controls the randomness of the output provied. It can be set between 0 and 
 There are other properties to choose from with detailed explanations. You can find a list over the properties here: https://platform.openai.com/docs/api-reference/
 
 3. The API call itself can be written like this using fetch:
+<img width="487" alt="Skjermbilde 2023-04-26 kl  10 39 44" src="https://user-images.githubusercontent.com/95288100/234548998-da27e76b-4ebf-47db-99b8-7573a0ded9b2.png">
 
+Here we have added the API key and the request data. The response will be the object that you extract the JSON object from.
+
+When brought together, the script looks like this.
+<img width="838" alt="Skjermbilde 2023-04-26 kl  10 54 25" src="https://user-images.githubusercontent.com/95288100/234549555-35a999b9-0271-404e-857a-e78182aef3de.png">
+
+And when testing out the application, you get a simple fun-fact generator that tells a fact based on the input.
+https://user-images.githubusercontent.com/95288100/234549884-8890d26c-e30f-4daa-b5b0-6b94bc2cc4c9.mov
+
+### Conclusion
+There are a lot of ways of implementing and using OpenAI's API, and certainly a lot more advanced examples than mine, but this hopefully provides a decent starting point.
+
+For more advanced use cases, the OpenAI API documentation https://platform.openai.com/docs/introduction, provides more information about the various models and parameters that can be used, as well as examples of how to integrate the API into different programming languages and frameworks.
+
+To test this project out on your own:
+- Clone the repository
+- Open up in an editor, for example VSCode.
+- Use live-server or something similar to see the project live.
