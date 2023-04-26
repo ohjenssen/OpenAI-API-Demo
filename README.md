@@ -1,12 +1,5 @@
 # OpenAI API - Demo
 
-## Introduction
-From OpenAI's page:
-"We’re releasing an API for accessing new AI models developed by OpenAI. Unlike most AI systems which are designed for one use-case, the API today provides a general-purpose “text in, text out” interface, allowing users to try it on virtually any English language task. You can now request access in order to integrate the API into your product, develop an entirely new application, or help us explore the strengths and limits of this technology."
-
-As mentioned earlier, the API can be utilized in various ways. However, this repository is designed as a demonstration on how to access AI models through the API and implement them in your own application. The purpose of this case study is to provide instructions on getting started with the API, along with explanations of key concepts and details. Additionally, it includes a sample implementation of the API in a simple web application.
-
-## Demo
 ### Getting started 
 1. The very first thing you need to do is create an OpenAI account. Go to chat.openai.com and create an account.
 2. Once your account is created and verified, go to https://platform.openai.com, click on your user-cion in the top right corner and press "View API keys".
