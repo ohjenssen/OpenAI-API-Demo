@@ -30,7 +30,7 @@ And in the JavaScript file, the API key and url is defined. The API key needs to
 
 2. The next step is defining our request data that will be used in the body of the API call.
 
-<img width="532" alt="Skjermbilde 2023-04-26 kl  10 01 59" src="https://user-images.githubusercontent.com/95288100/234542489-83a9154b-26a7-4fd4-88d8-8f2f3d87531d.png">
+<img width="645" alt="Skjermbilde 2023-04-26 kl  10 10 10" src="https://user-images.githubusercontent.com/95288100/234548634-63f1f529-0d07-41fd-9420-314ac3708174.png">
 
 The 'model' property is the only required property, while the other properties have default values. However, adjusting these properties can help you better control the response of the API. Here's a short explanation of the properties used in this example:
 
