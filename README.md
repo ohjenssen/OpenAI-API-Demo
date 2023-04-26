@@ -24,7 +24,21 @@ As mentioned earlier, the API can be utilized in various ways. However, this rep
 
 ![Skjermbilde 2023-04-25 kl  20 04 57](https://user-images.githubusercontent.com/95288100/234539999-145ec985-549b-4b5e-918c-7a78da1289c3.png)
 
-And in the JavaScript file, the API key and url is defined. The API key needs to be replaced with your own key and the url contains an endpoint that is compatible with the GPT model of your choice. This endpoint is compatible with the GPT-3.5 model 'text-davinci-003'.
+And in the JavaScript file, the API key and url is defined. The API key needs to be replaced with your own key and the url contains an endpoint that is compatible with the GPT model of your choice. The current endpoint is configured for the GPT-3.5 model 'text-davinci-003'.
+
+<img width="549" alt="Skjermbilde 2023-04-25 kl  20 02 23" src="https://user-images.githubusercontent.com/95288100/234541567-60462129-e54e-4a34-9be7-31a7af1172a7.png">
+
+2. The next step is defining our request data that will be used in the body of the API call.
+
+<img width="532" alt="Skjermbilde 2023-04-26 kl  10 01 59" src="https://user-images.githubusercontent.com/95288100/234542489-83a9154b-26a7-4fd4-88d8-8f2f3d87531d.png">
+
+The 'model' property is the only required property, while the other properties have default values. However, adjusting these properties can help you better control the response of the API. Here's a short explanation of the properties used in this example:
+
+#### Model
+The 'model' property specifies the language model that you want to use for generating text with the OpenAI API. In this example, we have set the model to 'text-davinci-003'. According to OpenAI, 'gpt-3.5-turbo' is the most capable and cost-effective model in the GPT-3.5 family. Although it is free to use, calling the API too frequently in a short period of time is limited. Therefore, 'text-davinci-003' is used in this case. OpenAI provides a wide range of models, some of which require different endpoints. Additionally, some models, such as GPT-4, are still in limited beta and require special access. A complete list of available models and their corresponding endpoints can be found here: https://platform.openai.com/docs/models/
+
+
+
 
 
 
