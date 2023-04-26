@@ -34,11 +34,25 @@ And in the JavaScript file, the API key and url is defined. The API key needs to
 
 The 'model' property is the only required property, while the other properties have default values. However, adjusting these properties can help you better control the response of the API. Here's a short explanation of the properties used in this example:
 
-#### Model
+#### model
 The 'model' property specifies the language model that you want to use for generating text with the OpenAI API. In this example, we have set the model to 'text-davinci-003'. According to OpenAI, 'gpt-3.5-turbo' is the most capable and cost-effective model in the GPT-3.5 family. Although it is free to use, calling the API too frequently in a short period of time is limited. Therefore, 'text-davinci-003' is used in this case. OpenAI provides a wide range of models, some of which require different endpoints. Additionally, some models, such as GPT-4, are still in limited beta and require special access. A complete list of available models and their corresponding endpoints can be found here: https://platform.openai.com/docs/models/
 
+#### prompt
+This is the starting text that the language model uses as a prompt. It's similar to writing a message to ChatGPT about any topic that you may be wondering about. To better control the output, additional text is added to the prompt to provide direction. However, the majority of the content is left up to the user.
 
+#### max_tokens
+The maximum number of tokens that will be generated in response is determined by this parameter. Tokens can be words or just chunks of characters. For example, the string 'ChatGPT is great!' is encoded into six tokens: ['Chat', 'G', 'PT', ' is', ' great', '!']. You pay for the tokens you consume, so the more tokens used, the more expensive the API call becomes. Additionally, the response received counts towards the total number of tokens. Lets say you write a prompt that amounts to 10 tokens and the response you get from the API amounts to 20 tokens. The total number of tokens used is then 30. So you you just spent 30 tokens. When you first signup with OpenAI you get a free trial usage up to 18$. The number of tokens also affects the duration of the API call, with more tokens taking longer to process. The maximum limit of tokens in a single call varies from model to model. For instance, the gpt-3.5-turbo-0301 model has a limit of 4096 tokens, while the text-davinci-003 has a limit of 2048 tokens.
 
+#### n
+This is the number of different responses that the language model will generate as a response to the prompt. In this example, we only need one fun-fact so it has been set to one. However, if you wanted to generate something else, like different name suggestions for a pet, you could set it to five and receive five names suggestions.
 
+#### stop
+This is a list of tokens that the language model should stop generating text at. In this case, it has been set to null, which means that the model will generate text until it reaches the max_tokens limit without stopping at any specific tokens.
 
+#### temperature
+This controls the randomness of the output provied. It can be set between 0 and 2. Higher values (closer to 2) make the output more random, while lower values make it more predictable. There is an alternative property called 'top-p' that can be used similarily, but OpenAI suggest only using either on of these.
+
+There are other properties to choose from with detailed explanations. You can find a list over the properties here: https://platform.openai.com/docs/api-reference/
+
+3. The API call itself can be written like this using fetch:
 
